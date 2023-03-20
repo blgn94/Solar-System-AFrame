@@ -35,7 +35,7 @@
             <img id="uranus" src="jpg/uranus1.jpg">
             <img id="venus" src="jpg/venus1.jpg">
         </a-assests>
-        <a-sphere position="-550 1.25 -15" radius="100.5" src="#sun" animation="property: rotation; to: 0 360 0; fill: backwards; duration: 2000; loop: true; easing: linear; segment-height: 56;">
+        <a-sphere position="-550 1.25 -15" radius="100.5" animation="property: rotation; to: 0 360 0; fill: backwards; duration: 2000; loop: true; easing: linear; segment-height: 56;"  material="src: #sun; shader: flat; " >
             <!-- light="type: point; color: white; intensity: 2.5" -->
             <!-- Mercury ring -->
             <a-ring color="white" segments-theta="512" radius-inner="500" radius-outer="500.1" side="double" rotation="90 0 0"></a-ring>
@@ -55,6 +55,7 @@
             <a-ring color="white" segments-theta="512" radius-inner="850" radius-outer="850.1" side="double" rotation="90 0 0"></a-ring>
             <!-- Pluto ring -->
             <a-ring color="white" segments-theta="512" radius-inner="910" radius-outer="910.1" side="double" rotation="90 0 0"></a-ring>
+            <a-light type="point" color="#FFF" intensity="2.5" distance="1000"></a-light>
         </a-sphere>
         <!-- Mercury planet -->
         <a-sphere position="-50 1.25 -5" radius="1.9" src="#mercury" animation="property: rotation; to: 0 360 0; fill: backwards; duration: 2000; loop: true; easing: linear; segment-height: 56;">
@@ -90,7 +91,7 @@
         </a-sphere>
         <!-- Background (Galaxy) -->
         <a-sky src="#galaxy" radius="5000"></a-sky>
-        <a-light type="point" intensity="2.5" position="0 1.25 -15"></a-light>
+        <!-- <a-light type="point" intensity="2.5" position="0 1.25 -15"></a-light> -->
     </a-schene>
 </body>
 </html>
