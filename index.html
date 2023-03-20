@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Solar System using A-Frame">
+    <meta name="description" content="Solar System, NUM Astronomy">
     <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
     <title>Solar System</title>
 </head>
@@ -38,23 +38,23 @@
         <a-sphere position="-550 1.25 -15" radius="100.5" animation="property: rotation; to: 0 360 0; fill: backwards; duration: 2000; loop: true; easing: linear; segment-height: 56;"  material="src: #sun; shader: flat; " >
             <!-- light="type: point; color: white; intensity: 2.5" -->
             <!-- Mercury ring -->
-            <a-ring color="white" segments-theta="512" radius-inner="500" radius-outer="500.1" side="double" rotation="90 0 0"></a-ring>
+            <a-ring material="shader: flat; opacity: 0.5; color: white;" segments-theta="512" radius-inner="500" radius-outer="500.1" side="double" rotation="90 0 0"></a-ring>
             <!-- Venus ring -->
-            <a-ring color="white" segments-theta="512" radius-inner="525" radius-outer="525.1" side="double" rotation="90 0 0"></a-ring>
+            <a-ring material="shader: flat; opacity: 0.5; color: white;" segments-theta="512" radius-inner="525" radius-outer="525.1" side="double" rotation="90 0 0"></a-ring>
             <!-- Earth ring -->
-            <a-ring color="white" segments-theta="512" radius-inner="546" radius-outer="546.1" side="double" rotation="90 0 0"></a-ring>
+            <a-ring material="shader: flat; opacity: 0.5; color: white;" segments-theta="512" radius-inner="546" radius-outer="546.1" side="double" rotation="90 0 0"></a-ring>
             <!-- Mars ring -->
-            <a-ring color="white" segments-theta="512" radius-inner="576" radius-outer="576.1" side="double" rotation="90 0 0"></a-ring>
+            <a-ring material="shader: flat; opacity: 0.5; color: white;" segments-theta="512" radius-inner="576" radius-outer="576.1" side="double" rotation="90 0 0"></a-ring>
             <!-- Neptune ring -->
-            <a-ring color="white" segments-theta="512" radius-inner="720" radius-outer="720.1" side="double" rotation="90 0 0"></a-ring>
+            <a-ring material="shader: flat; opacity: 0.5; color: white;" segments-theta="512" radius-inner="720" radius-outer="720.1" side="double" rotation="90 0 0"></a-ring>
             <!-- Uranus ring -->
-            <a-ring color="white" segments-theta="512" radius-inner="760" radius-outer="760.1" side="double" rotation="90 0 0"></a-ring>
+            <a-ring material="shader: flat; opacity: 0.5; color: white;" segments-theta="512" radius-inner="760" radius-outer="760.1" side="double" rotation="90 0 0"></a-ring>
             <!-- Jupiter ring -->
-            <a-ring color="white" segments-theta="512" radius-inner="810" radius-outer="810.1" side="double" rotation="90 0 0"></a-ring>
+            <a-ring material="shader: flat; opacity: 0.5; color: white;" segments-theta="512" radius-inner="810" radius-outer="810.1" side="double" rotation="90 0 0"></a-ring>
             <!-- Saturn ring -->
-            <a-ring color="white" segments-theta="512" radius-inner="850" radius-outer="850.1" side="double" rotation="90 0 0"></a-ring>
+            <a-ring material="shader: flat; opacity: 0.5; color: white;" segments-theta="512" radius-inner="850" radius-outer="850.1" side="double" rotation="90 0 0"></a-ring>
             <!-- Pluto ring -->
-            <a-ring color="white" segments-theta="512" radius-inner="910" radius-outer="910.1" side="double" rotation="90 0 0"></a-ring>
+            <a-ring material="shader: flat; opacity: 0.5; color: white;" segments-theta="512" radius-inner="910" radius-outer="910.1" side="double" rotation="90 0 0"></a-ring>
             <a-light type="point" color="#FFF" intensity="2.5" distance="1000"></a-light>
         </a-sphere>
         <!-- Mercury planet -->
@@ -66,7 +66,7 @@
         <!-- Earth planet -->
         <a-sphere position="-4 1.25 -5" radius="2.5" src="#earth" animation="property: rotation; to: 0 360 0; fill: backwards; duration: 2000; loop: true; easing: linear; segment-height: 56;">
             <!-- Moon ring -->
-            <a-ring color="white" segments-theta="512" radius-inner="9.3" radius-outer="9.31" side="double" rotation="90 0 0"></a-ring>
+            <a-ring material="shader: flat; opacity: 0.5; color: white;" segments-theta="512" radius-inner="9.3" radius-outer="9.31" side="double" rotation="90 0 0"></a-ring>
         </a-sphere>
         <!-- Moon -->
         <a-sphere position="5 1.25 -2.5" radius="0.25" src="#moon" animation="property: rotation; to: 0 360 0; fill: backwards; duration: 2000; loop: true; easing: linear; segment-height: 56;">
