@@ -4,9 +4,76 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
     <title>Solar System</title>
 </head>
 <body>
-    
+    <a-schene>
+        <a-entity position="0 2.2 4">
+            <a-entity camera look-controls wasd-controls>
+              <a-entity position="0 0 -3" geometry="primitive: ring; radiusOuter: 0.30; radiusInner: 0.25;" material="color: red;shader: flat" cursor="maxDistance: 30; fuse: true">
+                <a-animation begin="click" easing="ease-in" attribute="scale"
+                   fill="backwards" from="0.1 0.1 0.1" to="1 1 1" dur="150">
+                </a-animation>
+                <a-animation begin="fusing" easing="ease-in" attribute="scale"
+                   fill="forwards" from="1 1 1" to="0.1 0.1 0.1" dur="1500">
+                </a-animation>
+              </a-entity>
+            </a-entity>
+        </a-entity>
+
+        <a-assests>
+            <img id="galaxy" src="images/galaxy.bmp">
+            <img id="earth" src="images/earth.bmp">
+            <img id="jupiter" src="images/jupiter.bmp">
+            <img id="mars" src="images/mars.bmp">
+            <img id="mercury" src="images/mercury.bmp">
+            <img id="neptune" src="images/neptune.bmp">
+            <img id="moon" src="images/moon.bmp">
+            <img id="pluto" src="images/pluto.bmp">
+            <img id="saturn" src="images/saturn.bmp">
+            <img id="sun" src="images/sun.bmp">
+            <img id="uranus" src="images/uranus.bmp">
+            <img id="venus" src="images/venus.bmp">
+        </a-assests>
+
+        <a-sphere position="-550 1.25 -15" radius="100.5" src="#sun">
+            <a-animation begin="click" to="0 360 0" attribute="rotation" fill="backwards" duration="1" repeat="1" easing="linear" segment-height="56"></a-animation>
+        </a-sphere>
+        
+        <a-sphere position="-50 1.25 -5" radius="1.9" src="#mercury">
+            <a-animation begin="click" to="0 360 0" attribute="rotation" fill="backwards" duration="1" repeat="5" easing="linear" segment-height="56"></a-animation>
+        </a-sphere>
+        
+        <a-sphere position="-25 1.25 -5" radius="2.0" src="#venus">
+            <a-animation begin="click" to="0 360 0" attribute="rotation" fill="backwards" duration="1" repeat="5" easing="linear" segment-height="56"></a-animation>
+        </a-sphere>
+        <a-sphere position="-4 1.25 -5" radius="2.5" src="#earth">
+            <a-animation begin="click" to="0 360 0" attribute="rotation" fill="backwards" duration="1" repeat="5" easing="linear" segment-height="56"></a-animation>
+        </a-sphere>
+        <a-sphere position="5 1.25 -2.5" radius="0.25" src="#moon">
+            <a-animation begin="click" to="0 360 0" attribute="rotation" fill="backwards" duration="1" repeat="5" easing="linear" segment-height="56"></a-animation>
+        </a-sphere>
+        <a-sphere position="26 1.25 -5" radius="2.5" src="#mars">
+            <a-animation begin="click" to="0 360 0" attribute="rotation" fill="backwards" duration="1" repeat="5" easing="linear" segment-height="56"></a-animation>
+        </a-sphere>
+        <a-sphere position="170 19.25 -110" radius="8" src="#neptune">
+            <a-animation begin="click" to="0 360 0" attribute="rotation" fill="backwards" duration="1" repeat="5" easing="linear" segment-height="56"></a-animation>
+        </a-sphere>
+        <a-sphere position="110 10.25 0" radius="7.5" src="#uranus">
+            <a-animation begin="click" to="0 360 0" attribute="rotation" fill="backwards" duration="1" repeat="5" easing="linear" segment-height="56"></a-animation>
+        </a-sphere>
+        <a-sphere position="160 17.25 -11" radius="5.5" src="#jupiter">
+            <a-animation begin="click" to="0 360 0" attribute="rotation" fill="backwards" duration="1" repeat="5" easing="linear" segment-height="56"></a-animation>
+        </a-sphere>
+        <a-sphere position="200 27.25 -31" radius="5.5" src="#saturn">
+            <a-animation begin="click" to="0 360 0" attribute="rotation" fill="backwards" duration="1" repeat="5" easing="linear" segment-height="56"></a-animation>
+        </a-sphere>
+        <a-sphere position="260 28.25 -11" radius="2.5" src="#pluto">
+            <a-animation begin="click" to="0 360 0" attribute="rotation" fill="backwards" duration="1" repeat="5" easing="linear" segment-height="56"></a-animation>
+        </a-sphere>
+
+        <a-sky src="#galaxy"></a-sky>
+    </a-schene>
 </body>
 </html>
