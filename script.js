@@ -1,7 +1,7 @@
 function planetHandler(planetName) {
     document.getElementById("pictureDiv").style.display = 'flex'
 
-    let bgURL = "/planets/";
+    let bgURL = "planets/";
     let topText;
     let bottomText;
 
