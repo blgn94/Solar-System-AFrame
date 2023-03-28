@@ -1,5 +1,5 @@
 .header {
-  z-index: 1;
+  z-index: 2;
   width: 100%;
   position: absolute;
   color: aliceblue;
@@ -16,11 +16,16 @@
 }
 
 .nav_list {
+  text-align: center;
   font-size: 18px;
   display: flex;
+  justify-content: center;
   list-style: none;
   font-family: sans-serif;
+  text-align: center;
+  align-items: center;
 }
+
 .nav_link {
   cursor: pointer;
   display: block;
@@ -35,6 +40,7 @@
 }
 #menu-toggle:checked ~ .nav_list {
   transform: scale(1, 1);
+  z-index: 200;
 }
 
 .nav_list:hover a {
@@ -44,6 +50,42 @@
 .nav_list a:hover {
   opacity: 1;
   color: #fff;
+}
+
+#pictureDiv {
+  font-family: sans-serif;
+  display: none;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  color: white;
+  top: 75px ;
+  height: 88vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 300px 300px;
+  /* padding: 20px; */
+}
+
+#topText {
+  width: 30%;
+  margin: 2vw;
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.516);
+  padding: 10px;
+}
+
+#bottomText {
+  width: 30%;
+  margin: 2vw;
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.516);
+  padding: 10px
 }
 
 @media screen and (max-width: 500px) {
@@ -60,7 +102,7 @@
   .nav_list {
     font-size: 20px;
     flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 1);
     align-items: start;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -78,4 +120,23 @@
   .nav_list li {
     margin-bottom: 15px;
   }
+
+  #pictureDiv {
+    background-size: 250px 250px;
+    flex-direction: column;
+    top: 60px;
+  }
+  #topText {
+    width: 95%;
+    padding: 3px;
+  }
+  #bottomText {
+    width: 95%;
+    margin-right: 0px;
+    padding: 3px;
+  }
 }
+
+
+
+

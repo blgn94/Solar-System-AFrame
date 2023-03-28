@@ -9,21 +9,27 @@
 </head>
 <body>
     <header class="header" >
-        <div class="grid">
+        
             <input type="checkbox" id="menu-toggle">
             <label for="menu-toggle" class="menu-icon">☰</label>
+            
             <ul class="nav_list">
-                <li onclick="mercuryHandler()"><a class="nav_link">Буд</a></li>
-                <li><a class="nav_link">Сугар</a></li>
-                <li><a class="nav_link">Дэлхий</a></li>
-                <li><a class="nav_link">Ангараг</a></li>
-                <li><a class="nav_link">Бархасбадь</a></li>
-                <li><a class="nav_link">Санчир </a></li>
-                <li><a class="nav_link">Тэнгэрийн ван</a></li>
-                <li><a class="nav_link">Далайн ван </a></li>
+                <li class="navItem" class="home"><a class="nav_link"><img src="earth.svg" alt="Earth" onclick="clearPlanets()" width="40" height="40"></a></li>
+                <li class="navItem" onclick="planetHandler('mercury')"><a class="nav_link">Буд</a></li>
+                <li class="navItem" onclick="planetHandler('venus')"><a class="nav_link">Сугар</a></li>
+                <li class="navItem" onclick="planetHandler('earth')"><a class="nav_link">Дэлхий</a></li>
+                <li class="navItem" onclick="planetHandler('mars')"><a class="nav_link">Ангараг</a></li>
+                <li class="navItem" onclick="planetHandler('jupiter')"><a class="nav_link">Бархасбадь</a></li>
+                <li class="navItem" onclick="planetHandler('saturn')"><a class="nav_link">Санчир </a></li>
+                <li class="navItem" onclick="planetHandler('uranus')"><a class="nav_link">Тэнгэрийн ван</a></li>
+                <li class="navItem" onclick="planetHandler('neptune')"><a class="nav_link">Далайн ван </a></li>
             </ul>
         </div>
     </header>
+    <div id="pictureDiv">
+        <div id="topText"></div>
+        <div id="bottomText"></div>
+    </div>
     <a-scene>
         <!-- <a-entity position="0 2.2 4"> -->
             <a-entity camera look-controls wasd-controls="acceleration:400" fly="true" position="0 2.2 4">
@@ -52,7 +58,7 @@
             <img id="uranus" src="jpg/uranus1.jpg">
             <img id="venus" src="jpg/venus1.jpg">
         </a-assests>
-        <a-sphere position="-550 1.25 -15" radius="100.5" animation="property: rotation; to: 0 360 0; fill: backwards; duration: 2000; loop: true; easing: linear; segment-height: 56;"  material="src: #sun; shader: flat; " >
+        <a-sphere position="-550 1.25 -15" radius="100.5" animation="property: rotation; to: 0 360 0; fill: backwards; dur: 30000; loop: true; easing: linear; segment-height: 56;"  material="src: #sun; shader: flat; " >
             <!-- light="type: point; color: white; intensity: 2.5" -->
             <!-- Mercury ring -->
             <a-ring material="shader: flat; opacity: 0.5; color: white;" segments-theta="512" radius-inner="500" radius-outer="500.1" side="double" rotation="90 0 0"></a-ring>
@@ -75,17 +81,17 @@
         </a-sphere>
         <!-- Mercury planet -->
         <a-entity position="-550 1.25 -15" animation="property: rotation; to: 0 360 0; dur: 87600; fill: forwards; easing: linear; loop: true;" id="mercury_entity">
-            <a-sphere position="500 0 0" radius="1.9" src="#mercury" animation="property: rotation; to: 0 360 0; fill: backwards; duration: 2000; loop: true; easing: linear; segment-height: 56;" id="mercury_sphere">
+            <a-sphere position="500 0 0" radius="1.9" src="#mercury" animation="property: rotation; to: 0 360 0; fill: backwards; dur: 58650; loop: true; easing: linear; segment-height: 56;" id="mercury_sphere">
             </a-sphere>
         </a-entity>
         <!-- Venus planet -->
         <a-entity position="-550 1.25 -15" animation="property: rotation; to: 0 360 0; dur: 222000; fill: forwards; easing: linear; loop: true;">
-            <a-sphere position="525 0 0" radius="2.0" src="#venus" animation="property: rotation; to: 0 360 0; fill: backwards; duration: 2000; loop: true; easing: linear; segment-height: 56;">
+            <a-sphere position="525 0 0" radius="2.0" src="#venus" animation="property: rotation; to: 0 360 0; fill: backwards; dur: 243000; loop: true; easing: linear; segment-height: 56;">
             </a-sphere>
         </a-entity>
         <!-- Earth planet -->
         <a-entity position="-550 1.25 -15" animation="property: rotation; to: 0 360 0; dur: 365000; fill: forwards; easing: linear; loop: true;">
-            <a-sphere position="546 0 0" radius="2.5" src="#earth" animation="property: rotation; to: 0 360 0; fill: backwards; duration: 2000; loop: true; easing: linear; segment-height: 56;">
+            <a-sphere position="546 0 0" radius="2.5" src="#earth" animation="property: rotation; to: 0 360 0; fill: backwards; dur: 1000; loop: true; easing: linear; segment-height: 56;">
                 <!-- Moon ring -->
                 <a-ring material="shader: flat; opacity: 0.5; color: white;" segments-theta="512" radius-inner="9.3" radius-outer="9.31" side="double" rotation="90 0 0"></a-ring>
                 <!-- Moon -->
@@ -95,27 +101,27 @@
         </a-entity>
         <!-- Mars planet -->
         <a-entity position="-550 1.25 -15" animation="property: rotation; to: 0 360 0; dur: 686000; fill: forwards; easing: linear; loop: true;">
-            <a-sphere position="576 0 0" radius="2.5" src="#mars" animation="property: rotation; to: 0 360 0; fill: backwards; duration: 2000; loop: true; easing: linear; segment-height: 56;">
+            <a-sphere position="576 0 0" radius="2.5" src="#mars" animation="property: rotation; to: 0 360 0; fill: backwards; dur: 1030; loop: true; easing: linear; segment-height: 56;">
             </a-sphere>
         </a-entity>
         <!-- Jupiter planet -->
         <a-entity position="-550 1.25 -15" animation="property: rotation; to: 0 360 0; dur: 4328000; fill: forwards; easing: linear; loop: true;">
-            <a-sphere position="720 0 0" radius="8" src="#jupiter" animation="property: rotation; to: 0 360 0; fill: backwards; duration: 2000; loop: true; easing: linear; segment-height: 56;">
+            <a-sphere position="720 0 0" radius="8" src="#jupiter" animation="property: rotation; to: 0 360 0; fill: backwards; dur: 410; loop: true; easing: linear; segment-height: 56;">
             </a-sphere>
         </a-entity>
         <!-- Saturn planet -->
         <a-entity position="-550 1.25 -15" animation="property: rotation; to: 0 360 0; dur: 10950000; fill: forwards; easing: linear; loop: true;">
-            <a-sphere position="760 0 0" radius="7.5" src="#saturn" animation="property: rotation; to: 0 360 0; fill: backwards; duration: 2000; loop: true; easing: linear; segment-height: 56;">
+            <a-sphere position="760 0 0" radius="7.5" src="#saturn" animation="property: rotation; to: 0 360 0; fill: backwards; dur: 440; loop: true; easing: linear; segment-height: 56;">
             </a-sphere>
         </a-entity>
         <!-- Uranus planet -->
         <a-entity position="-550 1.25 -15" animation="property: rotation; to: 0 360 0; dur: 30660000; fill: forwards; easing: linear; loop: true;">
-            <a-sphere position="810 0 0" radius="5.5" src="#uranus" animation="property: rotation; to: 0 360 0; fill: backwards; duration: 2000; loop: true; easing: linear; segment-height: 56;">
+            <a-sphere position="810 0 0" radius="5.5" src="#uranus" animation="property: rotation; to: 0 360 0; fill: backwards; dur: 720; loop: true; easing: linear; segment-height: 56;">
             </a-sphere>
         </a-entity>
         <!-- Neptune planet -->
         <a-entity position="-550 1.25 -15" animation="property: rotation; to: 0 360 0; dur: 90520000; fill: forwards; easing: linear; loop: true;">
-            <a-sphere position="850 0 0" radius="5.5" src="#neptune" animation="property: rotation; to: 0 360 0; fill: backwards; duration: 2000; loop: true; easing: linear; segment-height: 56;">
+            <a-sphere position="850 0 0" radius="5.5" src="#neptune" animation="property: rotation; to: 0 360 0; fill: backwards; dur: 670; loop: true; easing: linear; segment-height: 56;">
             </a-sphere>
         </a-entity>
         <!-- Background (Galaxy) -->
@@ -124,17 +130,6 @@
     
 
     
-    <script>
-        function mercuryHandler() {
-            const mercuryEntity = document.querySelector('#mercury_entity');
-            const mercurySphere = document.querySelector('#mercury_sphere');
-            const entityPosition = mercuryEntity.object3D.position.clone()
-            const spherePosition = mercurySphere.object3D.position.clone();
-            
-            const cameraEntity = document.querySelector('a-entity[camera]');
-            cameraEntity.object3D.position.set(entityPosition.x + spherePosition.x, 2.2, entityPosition.z + spherePosition.z);
-        
-        }
-    </script>
+    <script src="script.js" defer></script>
 </body>
 </html>
