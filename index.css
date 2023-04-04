@@ -1,3 +1,7 @@
+body {
+  height: 100%;
+}
+
 .header {
   z-index: 2;
   width: 100%;
@@ -53,7 +57,6 @@
 }
 
 #pictureDiv {
-  font-family: sans-serif;
   display: none;
   flex-direction: row;
   justify-content: space-between;
@@ -63,15 +66,18 @@
   width: 100%;
   color: white;
   top: 75px ;
-  height: 88vh;
+  height: 70vh;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 300px 300px;
+  overflow-y: scroll;
+  font-family: sans-serif;
   /* padding: 20px; */
 }
 
 #topText {
   width: 30%;
+  height: fit-content;
   margin: 2vw;
   border: 1px solid white;
   border-radius: 10px;
@@ -80,6 +86,7 @@
 }
 
 #bottomText {
+  height: fit-content;
   width: 30%;
   margin: 2vw;
   border: 1px solid white;
