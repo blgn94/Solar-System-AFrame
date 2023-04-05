@@ -108,7 +108,9 @@ document.addEventListener('keydown', function(event) {
         });
     }
     if(event.key === '=') {
-        earth = document.getElementById("earth");
-        earth.setAttribute('radius', {radius: earth.getAttribute('geometry').radius++});
+        const earth = document.querySelector('#earth');
+        let incrementedRadius = earth.getAttribute('radius');
+        incrementedRadius++;
+        earth.setAttribute('radius', incrementedRadius);
     }
 });
