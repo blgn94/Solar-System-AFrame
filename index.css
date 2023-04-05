@@ -63,7 +63,7 @@ body {
   align-items: center;
   position: absolute;
   top: 75px;
-  height: 70vh;
+  height: 85%;
   color: white;
   width: 100%;
   z-index: 1;
@@ -135,7 +135,7 @@ body {
   #contentContainer {
     flex-direction: column;
     top: 60px;
-    height: 90%;
+    height: 100%;
     font-size: 16px;
     overflow-y: scroll;
   }
