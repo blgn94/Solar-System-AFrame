@@ -5,34 +5,12 @@
     <meta name="description" content="Solar System, NUM Astronomy">
     <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
     <link rel="stylesheet" href="index.css">
-    <script>
-        document.addEventListener('keydown', function(event) {
-            var camera = document.querySelector('a-entity[camera]');
-            var currentPosition = camera.getAttribute('position');
-            if (event.key === ' ') {
-                camera.setAttribute('position', {
-                    x: currentPosition.x,
-                    y: currentPosition.y + 2,
-                    z: currentPosition.z
-                });
-            }
-            if(event.key === 'Shift') {
-                camera.setAttribute('position', {
-                    x: currentPosition.x,
-                    y: currentPosition.y - 2,
-                    z: currentPosition.z
-                });
-            }
-        });
-      </script>
     <title>Solar System</title>
 </head>
 <body>
     <header class="header" >
-        
             <input type="checkbox" id="menu-toggle">
             <label for="menu-toggle" class="menu-icon">☰</label>
-            
             <ul class="nav_list">
                 <li class="navItem" class="home"><a class="nav_link"><img src="earth.svg" alt="Earth" onclick="clearPlanets()" width="40" height="40"></a></li>
                 <li class="navItem" onclick="planetHandler('mercury')"><a class="nav_link">Буд</a></li>
@@ -46,23 +24,14 @@
             </ul>
         </div>
     </header>
-    <div id="pictureDiv">
+    <div id="contentContainer">
         <div id="topText"></div>
+        <div id="pictureDiv"></div>
         <div id="bottomText"></div>
     </div>
     <a-scene>
-        <!-- <a-entity position="0 2.2 4"> -->
-            <a-entity camera look-controls wasd-controls="acceleration:400" fly="true" position="-550 150 -15">
-              <!-- <a-entity position="0 0 -3" geometry="primitive: ring; radiusOuter: 0.3; radiusInner: 0.29;" material="color: red;shader: flat" cursor="maxDistance: 30; fuse: true"> -->
-                <!-- <a-animation begin="click" easing="ease-in" attribute="scale"
-                   fill="backwards" from="0.1 0.1 0.1" to="1 1 1" dur="150">
-                </a-animation>
-                <a-animation begin="fusing" easing="ease-in" attribute="scale"
-                   fill="forwards" from="1 1 1" to="0.1 0.1 0.1" dur="1500">
-                </a-animation> -->
-              <!-- </a-entity> -->
-            </a-entity>
-        <!-- </a-entity> -->
+        <a-entity camera look-controls wasd-controls="acceleration:400" fly="true" position="-550 150 -15">
+        </a-entity>
 
         <a-assests>
             <img id="galaxy" src="jpg/galaxy.jpg">
@@ -112,7 +81,7 @@
         </a-entity>
         <!-- Earth planet -->
         <a-entity position="-550 1.25 -15" animation="property: rotation; to: 0 360 0; dur: 365000; fill: forwards; easing: linear; loop: true;">
-            <a-sphere position="546 0 0" radius="5.0" src="#earth" animation="property: rotation; to: 0 360 0; fill: backwards; dur: 1000; loop: true; easing: linear; segment-height: 56;" 
+            <a-sphere id="earth" position="546 0 0" radius="5.0" src="#earth" animation="property: rotation; to: 0 360 0; fill: backwards; dur: 1000; loop: true; easing: linear; segment-height: 56;" 
             sound="src: url(sounds/earth.mp3); autoplay: true; loop: true; volume: 7;" >
                 <!-- Moon ring -->
                 <a-ring material="shader: flat; opacity: 0.5; color: white;" segments-theta="512" radius-inner="9.3" radius-outer="9.31" side="double" rotation="90 0 0"></a-ring>
@@ -149,8 +118,6 @@
         <!-- Background (Galaxy) -->
         <a-sky src="#galaxy" radius="5000"></a-sky>
     </a-schene>
-    
-
     
     <script src="script.js" defer></script>
 </body>

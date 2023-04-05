@@ -1,5 +1,5 @@
 function planetHandler(planetName) {
-    document.getElementById("pictureDiv").style.display = 'flex'
+    document.getElementById("contentContainer").style.display = 'flex'
 
     let bgURL = "planets/";
     let topText;
@@ -87,5 +87,28 @@ function planetHandler(planetName) {
 }
 
 function clearPlanets() {
-    document.getElementById("pictureDiv").style.display = 'none';
+    document.getElementById("contentContainer").style.display = 'none';
 }
+
+document.addEventListener('keydown', function(event) {
+    var camera = document.querySelector('a-entity[camera]');
+    var currentPosition = camera.getAttribute('position');
+    if (event.key === ' ') {
+        camera.setAttribute('position', {
+            x: currentPosition.x,
+            y: currentPosition.y + 2,
+            z: currentPosition.z
+        });
+    }
+    if(event.key === 'Shift') {
+        camera.setAttribute('position', {
+            x: currentPosition.x,
+            y: currentPosition.y - 20,
+            z: currentPosition.z
+        });
+    }
+    if(event.key === '=') {
+        earth = document.getElementById("earth");
+        earth.setAttribute('radius', {radius: earth.getAttribute('geometry').radius++});
+    }
+});
