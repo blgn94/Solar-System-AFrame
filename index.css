@@ -149,9 +149,10 @@ body {
     padding: 10px;
   }
   #bottomText {
-    width: 80%;
+    display: none;
+    /* width: 80%;
     margin-right: 0px;
-    padding: 10px;
+    padding: 10px; */
   }
 }
 
