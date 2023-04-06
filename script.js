@@ -95,21 +95,29 @@ document.addEventListener('keydown', function(event) {
     if (event.key === ' ') {
         camera.setAttribute('position', {
             x: currentPosition.x,
-            y: currentPosition.y + 2,
+            y: currentPosition.y + 5,
             z: currentPosition.z
         });
     }
-    if(event.key === 'Shift') {
+    if(event.key === 'c') {
         camera.setAttribute('position', {
             x: currentPosition.x,
-            y: currentPosition.y - 20,
+            y: currentPosition.y - 5,
             z: currentPosition.z
         });
     }
-    if(event.key === '=') {
-        const earth = document.querySelector('#earth');
-        let incrementedRadius = earth.getAttribute('radius');
-        incrementedRadius++;
-        earth.setAttribute('radius', incrementedRadius);
+    if(event.key === 't') {
+        camera.setAttribute('position', {
+            x: -550,
+            y: 150,
+            z: -15,
+        });
+    }
+    if(event.key === 'y') {
+        camera.setAttribute('position', {
+            x: 0,
+            y: 10,
+            z: 0,
+        });
     }
 });
